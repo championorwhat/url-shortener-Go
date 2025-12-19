@@ -74,44 +74,44 @@ url-shortener/
 
 
 ## ▶️ Running the Project Locally
-'''1️⃣ Start the Backend
+```1️⃣ Start the Backend
 go run cmd/server/main.go
 Backend runs at:
 http://localhost:8080
 Health check:
-curl http://localhost:8080/health'''
+curl http://localhost:8080/health```
 2️⃣ Start the Frontend
-'''cd frontend
+```cd frontend
 python3 -m http.server 5500
 Open in browser:
-http://localhost:5500'''
+http://localhost:5500```
 ## 🔌 API Endpoints
 ➕ Shorten URL
 POST /api/shorten
-'''Request Body
+```Request Body
 {
   "url": "https://www.google.com"
-}'''
-'''Response
+}```
+```Response
 {
   "id": 1,
   "short_code": "gcNcKoq6",
   "original_url": "https://www.google.com",
   "created_at": "2025-12-19T18:00:58Z"
-}'''
+}```
 🔁 Redirect
 GET /{short_code}
-'''Example:
-http://localhost:8080/gcNcKoq6'''
+```Example:
+http://localhost:8080/gcNcKoq6```
 Redirects to the original URL.
 🧪 Example cURL Request
-'''curl -X POST http://localhost:8080/api/shorten \
+```curl -X POST http://localhost:8080/api/shorten \
   -H "Content-Type: application/json" \
-  -d '{"url":"https://www.google.com"}''''
+  -d '{"url":"https://www.google.com"}'```
 ## 🐳 Docker Support
 Build and run the backend using Docker:
-'''docker build -t go-url-shortener .
-docker run -p 8080:8080 go-url-shortener'''
+```docker build -t go-url-shortener .
+docker run -p 8080:8080 go-url-shortener```
 ## 🎯 Learning Outcomes
 Building REST APIs in Go
 Applying clean architecture principles
