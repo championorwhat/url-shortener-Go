@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Go URL Shortener</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page">
+    <div class="card">
+      <h1>🔗 Go URL Shortener</h1>
+      <p class="subtitle">
+        Convert long URLs into short, shareable links
+      </p>
+
+      <input
+        type="text"
+        id="urlInput"
+        placeholder="https://example.com"
+      />
+
+      <button id="shortenBtn">Shorten URL</button>
+
+      <div id="result" class="result hidden"></div>
+    </div>
+
+    <footer>
+      Built with Go · SQLite · REST API
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

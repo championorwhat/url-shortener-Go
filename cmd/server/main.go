@@ -57,6 +57,8 @@ func main() {
 	// --------------------------------------------------
 	r := mux.NewRouter()
 	r.Use(middleware.Logger)
+	r.Use(middleware.CORS)
+
 
 	// Health check (required for deployment)
 	r.HandleFunc("/health", func(w http.ResponseWriter, r *http.Request) {
@@ -65,8 +67,8 @@ func main() {
 	})
 
 	// API routes
-	r.HandleFunc("/api/shorten", h.Shorten).Methods("POST")
-	r.HandleFunc("/{code}", h.Redirect).Methods("GET")
+	r.HandleFunc("/api/shorten", h.Shorten).Methods("POST", "OPTIONS")
+	r.HandleFunc("/{code}", h.Redirect).Methods("GET", "OPTIONS")
 
 	// --------------------------------------------------
 	// Start server
